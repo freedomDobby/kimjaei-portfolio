@@ -20,7 +20,7 @@ interface SectionProps {
 }
 
 export const Section = styled.div<SectionProps>`
-  // border: 1px solid red;
+  border: 1px solid red;
   width: ${({ width }) => width || "auto"};
   padding: 3px;
 `;

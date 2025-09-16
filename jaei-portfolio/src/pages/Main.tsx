@@ -6,15 +6,14 @@ import Tabs from "@mui/joy/Tabs";
 import TabList from "@mui/joy/TabList";
 import Tab from "@mui/joy/Tab";
 import TabPanel from "@mui/joy/TabPanel";
-import { DialogTitle, DialogContent, DialogActions, Button } from "@mui/joy";
-import { Dialog } from "@mui/material";
+
 // assets
 import { MdEmail, MdWorkHistory } from "react-icons/md";
 import { FaAward, FaBuilding, FaGithub, FaGraduationCap } from "react-icons/fa";
 import jaei2 from "../assets/jaei2.jpg";
-import ssafyPJT1 from "../assets/ssafyPJT1-1.png";
-import ssafyPJT2 from "../assets/ssafyPJT2-1.svg";
-import ssafyPJT3 from "../assets/ssafyPJT3-1.svg";
+import ssafyPJT1 from "../assets/ssafyPJT1.svg";
+import ssafyPJT2 from "../assets/ssafyPJT2.svg";
+import ssafyPJT3 from "../assets/ssafyPJT3.svg";
 import SKON from "../assets/SKON.svg";
 import NuriFlex from "../assets/NuriFlex.svg";
 import Bigtorage from "../assets/Bigtorage.svg";
@@ -27,6 +26,10 @@ import SkillContainer, {
 } from "../components/SkillContainer";
 import React from "react";
 import ProjectCard from "../components/ProjectCard";
+
+// Type
+import type { Project } from "../types/project";
+import ProjectModal from "../components/ProjectModal";
 
 function Main() {
   const ssafyPJT = [
@@ -69,6 +72,7 @@ function Main() {
     {
       name: "SKON",
       period: "2025.07 - 진행 중",
+      teamSize: 4,
       role: ["Front-end 담당"],
       descriptionDetail: "ESS 관제 플랫폼 사이트 제작",
       thumbnail: SKON,
@@ -76,6 +80,7 @@ function Main() {
     {
       name: "PCMS",
       period: "2024.12 - 2025.03",
+      teamSize: 4,
       role: [" Front-end "],
       descriptionDetail: "",
       thumbnail: Bigtorage,
@@ -83,6 +88,7 @@ function Main() {
     {
       name: "NuriFlex ",
       period: "2024.07 - 2024.11",
+      teamSize: 4,
       role: [" Front-end "],
       descriptionDetail: "베트남 ESS 관제 플랫폼 사이트 제작",
       thumbnail: NuriFlex,
@@ -90,9 +96,9 @@ function Main() {
   ];
 
   const [open, setOpen] = React.useState(false);
-  const [selectedPJT, setSelectedPJT] = React.useState<any | null>(null);
+  const [selectedPJT, setSelectedPJT] = React.useState<Project | null>(null);
 
-  const handleOpen = (pjt: any) => {
+  const handleOpen = (pjt: Project) => {
     setSelectedPJT(pjt);
     setOpen(true);
   };
@@ -365,40 +371,11 @@ function Main() {
         </Card>
       </MainContainer>
       {/* 프로젝트 상세 모달 */}
-      <Dialog open={open} onClose={handleClose} maxWidth="md">
-        {selectedPJT && (
-          <>
-            <DialogTitle>{selectedPJT.name}</DialogTitle>
-            <DialogContent>
-              <Typography level="body-sm" sx={{ fontWeight: 600 }}>
-                기간: {selectedPJT.period}
-              </Typography>
-              <Typography level="body-sm">
-                참여 인원: {selectedPJT.teamSize}명
-              </Typography>
-              <Typography level="body-sm">
-                담당: {selectedPJT.role.join(", ")}
-              </Typography>
-              <Typography sx={{ mt: 1 }}>{selectedPJT.description}</Typography>
-              <Typography textColor="text.secondary">
-                {selectedPJT.descriptionDetail}
-              </Typography>
-              <img
-                src={`/assets/${selectedPJT.thumbnail}.png`}
-                alt={selectedPJT.name}
-                style={{
-                  width: "100%",
-                  marginTop: "12px",
-                  borderRadius: "8px",
-                }}
-              />
-            </DialogContent>
-            <DialogActions>
-              <Button onClick={handleClose}>닫기</Button>
-            </DialogActions>
-          </>
-        )}
-      </Dialog>
+      <ProjectModal
+        open={open}
+        onClose={handleClose}
+        selectedPJT={selectedPJT}
+      />
     </Container>
   );
 }

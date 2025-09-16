@@ -6,17 +6,7 @@ import AspectRatio from "@mui/joy/AspectRatio";
 import Typography from "@mui/joy/Typography";
 import Chip from "@mui/joy/Chip";
 import Box from "@mui/joy/Box";
-
-export interface Project {
-  name: string;
-  period: string;
-  teamSize?: number;
-  role?: string[];
-  description?: string;
-  descriptionDetail: string;
-  thumbnail: string;
-  award?: string;
-}
+import type { Project } from "../types/project";
 
 interface ProjectCardProps {
   project: Project;
