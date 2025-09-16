@@ -8,7 +8,7 @@ interface SkillProps {
 }
 
 export const SkillGroup = styled.div`
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 `;
 
 export const SkillGroupTitle = styled.h3`
@@ -19,8 +19,8 @@ export const SkillGroupTitle = styled.h3`
 `;
 
 const Square = styled.div<{ filled: boolean }>`
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   border-radius: 3px;
   background-color: ${({ filled }) => (filled ? "#4A90E2" : "#ddd")};
 `;
@@ -34,17 +34,19 @@ function SkillContainer({ skill, description, level }: SkillProps) {
   return (
     <Container width="100%">
       {/* skill 이름 */}
-      <div style={{ width: "15%" }}>{skill}</div>
+      <div style={{ width: "15%", fontSize: "14px" }}>{skill}</div>
 
       {/* 네모 등급 */}
-      <SquareGroup style={{ width: "25%" }}>
+      <SquareGroup style={{ width: "20%" }}>
         {Array.from({ length: 5 }).map((_, i) => (
           <Square key={i} filled={i < level} />
         ))}
       </SquareGroup>
 
       {/* 설명 */}
-      <TextContainer style={{ width: "60%" }}>{description}</TextContainer>
+      <TextContainer style={{ width: "65%", fontSize: "13px" }}>
+        {description}
+      </TextContainer>
     </Container>
   );
 }

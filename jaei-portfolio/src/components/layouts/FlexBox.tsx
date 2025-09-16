@@ -20,18 +20,18 @@ interface SectionProps {
 }
 
 export const Section = styled.div<SectionProps>`
-  border: 1px solid red;
+  // border: 1px solid red;
   width: ${({ width }) => width || "auto"};
-  padding: 5px;
+  padding: 3px;
 `;
 
 export const Card = styled.div`
-  border: 1px solid red;
+  // border: 1px solid red;
   background: #ffffff;
 `;
 
 export const LabelSection = styled.div`
-  border: 1px solid green;
+  // border: 1px solid green;
   display: flex;
   gap: 2px;
   justify-content: flex-start;
@@ -39,19 +39,18 @@ export const LabelSection = styled.div`
 `;
 
 export const Title = styled.h3`
-  margin-bottom: 10px;
+  // border: 1px solid red;
   font-weight: bold;
   flex: display;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
   color: #333;
 `;
 
 export const TextContainer = styled.div<TextProps>`
+  // border: 1px solid blue;
   font-weight: ${({ bold }) => bold || "normal"};
   width: ${({ width }) => width || "auto"};
-  border: 1px solid blue;
   flex: display;
   justify-content: center;
   align-items: center;
@@ -60,7 +59,7 @@ export const TextContainer = styled.div<TextProps>`
 `;
 
 export const Container = styled.div<ContainerProps>`
-  border: 1px solid red;
+  // border: 1px solid red;
   display: flex;
   width: ${({ width }) => width || "auto"};
   height: ${({ height }) => height || "auto"};
@@ -72,7 +71,7 @@ export const Container = styled.div<ContainerProps>`
 `;
 
 export const MainContainer = styled.div<ContainerProps>`
-  border: 1px solid black;
+  // border: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content: center;
