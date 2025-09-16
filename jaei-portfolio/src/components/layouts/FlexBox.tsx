@@ -3,11 +3,11 @@ import styled from "styled-components";
 interface ContainerProps {
   width?: string | null;
   height?: string | null;
-  margin?: string | null;
-  padding?: string | null;
+  $margin?: string | null;
+  $padding?: string | null;
   flexDirection?: string | null;
   justifyContent?: string | null;
-  alignItems?: string | null;
+  $alignItems?: string | null;
 }
 
 interface TextProps {
@@ -63,11 +63,11 @@ export const Container = styled.div<ContainerProps>`
   display: flex;
   width: ${({ width }) => width || "auto"};
   height: ${({ height }) => height || "auto"};
-  margin: ${({ margin }) => margin || "0"};
-  padding: ${({ padding }) => padding || "0"};
+  margin: ${({ $margin }) => $margin || "0"};
+  padding: ${({ $padding }) => $padding || "0"};
   flex-direction: ${({ flexDirection }) => flexDirection || "row"};
   justify-content: ${({ justifyContent }) => justifyContent || "flex-start"};
-  align-items: ${({ alignItems }) => alignItems || "center"};
+  align-items: ${({ $alignItems }) => $alignItems || "center"};
 `;
 
 export const MainContainer = styled.div<ContainerProps>`
@@ -78,6 +78,6 @@ export const MainContainer = styled.div<ContainerProps>`
   align-content: center;
   width: ${({ width }) => width || "100%"};
   height: ${({ height }) => height || "100%"};
-  margin: ${({ margin }) => margin || "0"};
-  padding: ${({ padding }) => padding || "0"};
+  margin: ${({ $margin }) => $margin || "0"};
+  padding: ${({ $padding }) => $padding || "0"};
 `;

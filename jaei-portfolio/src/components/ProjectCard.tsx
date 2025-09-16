@@ -5,6 +5,7 @@ import CardOverflow from "@mui/joy/CardOverflow";
 import AspectRatio from "@mui/joy/AspectRatio";
 import Typography from "@mui/joy/Typography";
 import Chip from "@mui/joy/Chip";
+import Box from "@mui/joy/Box";
 
 export interface Project {
   name: string;
@@ -49,8 +50,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
       </CardOverflow>
 
       <CardContent>
-        <Typography
-          level="title-md"
+        <Box
           sx={{
             fontWeight: "bold",
             display: "flex",
@@ -64,7 +64,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
               {project.award}
             </Chip>
           )}
-        </Typography>
+        </Box>
 
         <Typography level="body-sm" textColor="text.secondary">
           {project.period}

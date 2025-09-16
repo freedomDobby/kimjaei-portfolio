@@ -18,11 +18,11 @@ export const SkillGroupTitle = styled.h3`
   color: #444;
 `;
 
-const Square = styled.div<{ filled: boolean }>`
-  width: 15px;
-  height: 15px;
+const Square = styled.div<{ $filled: boolean }>`
+  width: 20px;
+  height: 20px;
   border-radius: 3px;
-  background-color: ${({ filled }) => (filled ? "#4A90E2" : "#ddd")};
+  background-color: ${({ $filled }) => ($filled ? "#4A90E2" : "#ddd")};
 `;
 
 const SquareGroup = styled.div`
@@ -39,7 +39,7 @@ function SkillContainer({ skill, description, level }: SkillProps) {
       {/* 네모 등급 */}
       <SquareGroup style={{ width: "20%" }}>
         {Array.from({ length: 5 }).map((_, i) => (
-          <Square key={i} filled={i < level} />
+          <Square key={i} $filled={i < level} />
         ))}
       </SquareGroup>
 

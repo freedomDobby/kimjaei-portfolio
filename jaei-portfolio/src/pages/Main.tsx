@@ -100,8 +100,8 @@ function Main() {
   const handleClose = () => setOpen(false);
 
   return (
-    <Container alignItems="start" height="100%">
-      <MainContainer width="15%" margin="3" padding="10px">
+    <Container $alignItems="start" height="100%">
+      <MainContainer width="15%" $margin="3" $padding="10px">
         <Card variant="outlined" sx={{ p: 2, alignItems: "center" }}>
           {/* 프로필 사진 */}
           <img
@@ -236,7 +236,7 @@ function Main() {
         </Card>
       </MainContainer>
       {/*  */}
-      <MainContainer width="85%" margin="3" padding="10px">
+      <MainContainer width="85%" $margin="3" $padding="10px">
         {/* Skill */}
         <Card variant="outlined" sx={{ mb: 2 }}>
           <Title>🌟 Skill</Title>
