@@ -34,7 +34,9 @@ function SkillContainer({ skill, description, level }: SkillProps) {
   return (
     <Container width="100%">
       {/* skill 이름 */}
-      <div style={{ width: "15%", fontSize: "14px" }}>{skill}</div>
+      <div style={{ width: "15%", fontSize: "14px", fontWeight: "bold" }}>
+        {skill}
+      </div>
 
       {/* 네모 등급 */}
       <SquareGroup style={{ width: "20%" }}>

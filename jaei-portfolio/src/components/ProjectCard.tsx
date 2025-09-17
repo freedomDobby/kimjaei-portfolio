@@ -59,7 +59,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
         <Typography level="body-sm" textColor="text.secondary">
           {project.period}
         </Typography>
-        <Typography level="body-sm">{project.descriptionDetail}</Typography>
+        <Typography level="body-sm">{project.shortDescription}</Typography>
       </CardContent>
     </Card>
   );
