@@ -239,8 +239,11 @@ function Main() {
             <img
               src={jaei2}
               alt="profile"
-              width="150"
-              style={{ borderRadius: "8px" }}
+              style={{
+                width: "clamp(80px, 40%, 150px)",
+                height: "auto",
+                borderRadius: "8px",
+              }}
             />
 
             {/* 이름 */}
@@ -319,7 +322,7 @@ function Main() {
               </Typography>
 
               {/* SSAFY */}
-              <div style={{ marginBottom: "12px" }}>
+              <div style={{ marginBottom: "clamp(8px, 1vh, 16px)" }}>
                 <Typography level="body-md" sx={{ fontWeight: 600 }}>
                   2023.01 ~ 2023.12
                 </Typography>

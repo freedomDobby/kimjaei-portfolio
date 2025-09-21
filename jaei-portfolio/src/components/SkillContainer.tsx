@@ -13,16 +13,16 @@ export const SkillGroup = styled.div`
 `;
 
 export const SkillGroupTitle = styled.h3`
-  font-size: 15px;
+  font-size: clamp(12px, 1.2vw, 15px); /* 최소 12px ~ 최대 15px */
   font-weight: bold;
-  margin: 7px 0;
+  margin: clamp(4px, 0.5vh, 7px) 0; /* 화면 크기에 따라 마진 */
   color: #444;
 `;
 
 const Square = styled.div<{ $filled: boolean }>`
-  width: 20px;
-  height: 20px;
-  border-radius: 3px;
+  width: clamp(10px, 2vw, 20px);
+  height: clamp(10px, 2vw, 20px);
+  border-radius: 10%;
   background-color: ${({ $filled }) => ($filled ? "#4A90E2" : "#ddd")};
 `;
 
