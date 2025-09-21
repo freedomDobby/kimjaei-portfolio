@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Container, TextContainer } from "./layouts/FlexBox";
+import { TextContainer } from "./layouts/FlexBox";
 
 interface SkillProps {
   skill: string;
@@ -8,13 +8,14 @@ interface SkillProps {
 }
 
 export const SkillGroup = styled.div`
-  margin-bottom: 10px;
+  // border: 1px solid green;
+  margin-bottom: 7px;
 `;
 
 export const SkillGroupTitle = styled.h3`
   font-size: 15px;
   font-weight: bold;
-  margin: 10px 0;
+  margin: 7px 0;
   color: #444;
 `;
 
@@ -32,7 +33,7 @@ const SquareGroup = styled.div`
 
 function SkillContainer({ skill, description, level }: SkillProps) {
   return (
-    <Container width="100%">
+    <TextContainer width="100%">
       {/* skill 이름 */}
       <div style={{ width: "15%", fontSize: "14px", fontWeight: "bold" }}>
         {skill}
@@ -49,7 +50,7 @@ function SkillContainer({ skill, description, level }: SkillProps) {
       <TextContainer style={{ width: "65%", fontSize: "13px" }}>
         {description}
       </TextContainer>
-    </Container>
+    </TextContainer>
   );
 }
 

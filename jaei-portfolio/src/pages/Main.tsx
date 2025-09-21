@@ -19,7 +19,12 @@ import NuriFlex from "../assets/NuriFlex.svg";
 import Bigtorage from "../assets/Bigtorage.svg";
 
 // Component
-import { Container, MainContainer, Title } from "../components/layouts/FlexBox";
+import {
+  Container,
+  ContentContainer,
+  MainContainer,
+  Title,
+} from "../components/layouts/FlexBox";
 import SkillContainer, {
   SkillGroup,
   SkillGroupTitle,
@@ -220,269 +225,306 @@ function Main() {
   const handleClose = () => setOpen(false);
 
   return (
-    <Container $alignItems="start" height="100%">
-      <MainContainer width="15%" $margin="3" $padding="10px">
-        <Card variant="outlined" sx={{ p: 2, alignItems: "center" }}>
-          {/* 프로필 사진 */}
-          <img
-            src={jaei2}
-            alt="profile"
-            width="150"
-            style={{ borderRadius: "8px", marginBottom: "12px" }}
-          />
+    <Container $alignItems="start">
+      <MainContainer width="15%" $alignItems="start">
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            flex: 1,
+          }}
+        >
+          <Card variant="outlined" sx={{ width: "85%", alignItems: "center" }}>
+            {/* 프로필 사진 */}
+            <img
+              src={jaei2}
+              alt="profile"
+              width="150"
+              style={{ borderRadius: "8px" }}
+            />
 
-          {/* 이름 */}
-          <CardContent sx={{ textAlign: "center" }}>
-            <Typography level="title-lg" sx={{ fontWeight: "bold" }}>
-              김재이
-            </Typography>
-            <Typography level="body-sm" textColor="text.secondary">
-              Front-end Developer
-            </Typography>
-          </CardContent>
+            {/* 이름 */}
+            <CardContent sx={{ textAlign: "center" }}>
+              <Typography level="title-lg" sx={{ fontWeight: "bold" }}>
+                김재이
+              </Typography>
+              <Typography level="body-md" textColor="text.secondary">
+                Front-end Developer
+              </Typography>
+            </CardContent>
 
-          {/* Contact */}
-          <CardContent
-            sx={{ display: "flex", flexDirection: "column", gap: 1 }}
-          >
-            <Typography
-              component="a"
-              href="mailto:dobbykim0320@gmail.com"
-              startDecorator={<MdEmail />}
-              sx={{ textDecoration: "none", color: "inherit" }}
+            {/* Contact */}
+            <CardContent
+              sx={{ display: "flex", flexDirection: "column", gap: 1 }}
             >
-              dobbykim0320@gmail.com
-            </Typography>
+              <Typography
+                component="a"
+                href="mailto:dobbykim0320@gmail.com"
+                startDecorator={<MdEmail />}
+                sx={{ textDecoration: "none", color: "inherit" }}
+              >
+                dobbykim0320@gmail.com
+              </Typography>
 
-            <Typography
-              component="a"
-              href="https://github.com/freedomDobby"
-              startDecorator={<FaGithub />}
-              sx={{ textDecoration: "none", color: "inherit" }}
-            >
-              github
-            </Typography>
-          </CardContent>
-        </Card>
+              <Typography
+                component="a"
+                href="https://github.com/freedomDobby"
+                startDecorator={<FaGithub />}
+                sx={{ textDecoration: "none", color: "inherit" }}
+              >
+                github
+              </Typography>
+            </CardContent>
+          </Card>
+        </div>
 
         {/* About Me */}
-        <Card variant="outlined" sx={{ mt: 2 }}>
-          <CardContent>
-            <Typography
-              level="title-md"
-              sx={{ mb: 1, fontWeight: "bold" }}
-              startDecorator={<MdWorkHistory />}
-            >
-              Experience
-            </Typography>
-            <Typography level="body-sm" textColor="text.secondary">
-              1년 3개월
-            </Typography>
-            <Typography
-              level="title-md"
-              sx={{ mb: 1, fontWeight: "bold" }}
-              startDecorator={<FaBuilding />}
-            >
-              Company
-            </Typography>
-            <Typography level="body-sm" textColor="text.secondary">
-              Bigtorage (2024.07 입사)
-            </Typography>
-          </CardContent>
-        </Card>
+        <div style={{ width: "100%", display: "flex", flex: 1 }}>
+          <Card variant="outlined" sx={{ width: "85%" }}>
+            <CardContent>
+              <Typography
+                level="title-md"
+                sx={{ fontWeight: "bold" }}
+                startDecorator={<MdWorkHistory />}
+              >
+                Experience
+              </Typography>
+              <Typography level="body-md" textColor="text.secondary">
+                1년 3개월
+              </Typography>
+              <Typography
+                level="title-md"
+                sx={{ fontWeight: "bold" }}
+                startDecorator={<FaBuilding />}
+              >
+                Company
+              </Typography>
+              <Typography level="body-md" textColor="text.secondary">
+                Bigtorage (2024.07 입사)
+              </Typography>
+            </CardContent>
+          </Card>
+        </div>
 
         {/* Education */}
-        <Card variant="outlined" sx={{ mt: 2 }}>
-          <CardContent>
-            <Typography
-              level="title-md"
-              sx={{ mb: 1, fontWeight: "bold" }}
-              startDecorator={<FaGraduationCap />}
-            >
-              Education
-            </Typography>
+        <div style={{ width: "100%", display: "flex", flex: 1 }}>
+          <Card variant="outlined" sx={{ width: "85%" }}>
+            <CardContent>
+              <Typography
+                level="title-md"
+                sx={{ fontWeight: "bold" }}
+                startDecorator={<FaGraduationCap />}
+              >
+                Education
+              </Typography>
 
-            {/* SSAFY */}
-            <div style={{ marginBottom: "12px" }}>
-              <Typography level="body-sm" sx={{ fontWeight: 600 }}>
-                2023.01 ~ 2023.12
-              </Typography>
-              <Typography level="body-sm" textColor="text.secondary">
-                삼성청년SW아카데미(SSAFY) 9기
-              </Typography>
-            </div>
+              {/* SSAFY */}
+              <div style={{ marginBottom: "12px" }}>
+                <Typography level="body-md" sx={{ fontWeight: 600 }}>
+                  2023.01 ~ 2023.12
+                </Typography>
+                <Typography level="body-md" textColor="text.secondary">
+                  삼성청년SW아카데미(SSAFY) 9기
+                </Typography>
+              </div>
 
-            {/* Korea IT */}
-            <div>
-              <Typography level="body-sm" sx={{ fontWeight: 600 }}>
-                2022.05 ~ 2022.12
-              </Typography>
-              <Typography level="body-sm" textColor="text.secondary">
-                Korea IT 아카데미 Frontend 수료
-              </Typography>
-            </div>
-          </CardContent>
-        </Card>
+              {/* Korea IT */}
+              <div>
+                <Typography level="body-md" sx={{ fontWeight: 600 }}>
+                  2022.05 ~ 2022.12
+                </Typography>
+                <Typography level="body-md" textColor="text.secondary">
+                  Korea IT 아카데미 Frontend 수료
+                </Typography>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
 
         {/*  Awards & Certificates */}
-        <Card variant="outlined" sx={{ mt: 2 }}>
-          <CardContent>
-            <Typography
-              level="title-md"
-              sx={{ mb: 1, fontWeight: "bold" }}
-              startDecorator={<FaAward />}
-            >
-              Awards & Certificates
-            </Typography>
+        <div style={{ width: "100%", display: "flex", flex: 1 }}>
+          <Card variant="outlined" sx={{ width: "85%" }}>
+            <CardContent>
+              <Typography
+                level="title-md"
+                sx={{ fontWeight: "bold" }}
+                startDecorator={<FaAward />}
+              >
+                Awards & Certificates
+              </Typography>
 
-            <div>
-              <Typography level="body-sm" sx={{ fontWeight: 600 }}>
-                2025.09
-              </Typography>
-              <Typography level="body-sm" textColor="text.secondary">
-                OPIc IH 취득
-              </Typography>
-            </div>
+              <div>
+                <Typography level="body-md" sx={{ fontWeight: 600 }}>
+                  2025.09
+                </Typography>
+                <Typography level="body-md" textColor="text.secondary">
+                  OPIc IH 취득
+                </Typography>
+              </div>
 
-            <div style={{}}>
-              <Typography level="body-sm" sx={{ fontWeight: 600 }}>
-                2023.11
-              </Typography>
-              <Typography level="body-sm" textColor="text.secondary">
-                SSAFY 자율프로젝트 우수상
-              </Typography>
-            </div>
-          </CardContent>
-        </Card>
+              <div style={{}}>
+                <Typography level="body-md" sx={{ fontWeight: 600 }}>
+                  2023.11
+                </Typography>
+                <Typography level="body-md" textColor="text.secondary">
+                  SSAFY 자율프로젝트 우수상
+                </Typography>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
       </MainContainer>
       {/*  */}
-      <MainContainer width="85%" $margin="3" $padding="10px">
+      <MainContainer width="85%">
         {/* Skill */}
-        <Card variant="outlined" sx={{ mb: 2 }}>
-          <Title>🌟 Skill</Title>
-          <div style={{ display: "flex", gap: "15px" }}>
-            {/* 왼쪽 컬럼 */}
-            <div style={{ flex: 1 }}>
-              {/* 언어 */}
-              <SkillGroup>
-                <SkillGroupTitle>💻 Language</SkillGroupTitle>
-                <SkillContainer
-                  skill="Java"
-                  description="백준 골드5 수준 문제 해결 가능"
-                  level={3}
-                />
-                <SkillContainer
-                  skill="TypeScript"
-                  description="Nuxt/Nest 프로젝트 적용, 안정적인 코드 작성"
-                  level={4}
-                />
-                <SkillContainer
-                  skill="JavaScript"
-                  description="React/Vue 프로젝트 활용 경험"
-                  level={4}
-                />
-              </SkillGroup>
+        <div
+          style={{
+            display: "flex",
+            flex: 1,
+            width: "100%",
+          }}
+        >
+          <Card variant="outlined" sx={{ width: "98%" }}>
+            <Title>🌟 Skill</Title>
+            <div style={{ display: "flex", gap: "15px" }}>
+              {/* 왼쪽 컬럼 */}
+              <div style={{ flex: 1 }}>
+                {/* 언어 */}
+                <SkillGroup>
+                  <SkillGroupTitle>💻 Language</SkillGroupTitle>
+                  <SkillContainer
+                    skill="Java"
+                    description="백준 골드5 수준 문제 해결 가능"
+                    level={3}
+                  />
+                  <SkillContainer
+                    skill="TypeScript"
+                    description="Nuxt/Nest 프로젝트 적용, 안정적인 코드 작성"
+                    level={4}
+                  />
+                  <SkillContainer
+                    skill="JavaScript"
+                    description="React/Vue 프로젝트 활용 경험"
+                    level={4}
+                  />
+                </SkillGroup>
 
-              {/* 라이브러리/프레임워크 */}
-              <SkillGroup>
-                <SkillGroupTitle>📚 Library / Framework</SkillGroupTitle>
-                <SkillContainer
-                  skill="React & Vue"
-                  description="Front-end 프로젝트 경험"
-                  level={4}
-                />
-                <SkillContainer
-                  skill="Nuxt JS"
-                  description="SSR 프로젝트, PostgreSQL 연동 경험"
-                  level={4}
-                />
-              </SkillGroup>
+                {/* 라이브러리/프레임워크 */}
+                <SkillGroup>
+                  <SkillGroupTitle>📚 Library / Framework</SkillGroupTitle>
+                  <SkillContainer
+                    skill="React & Vue"
+                    description="Front-end 프로젝트 경험"
+                    level={4}
+                  />
+                  <SkillContainer
+                    skill="Nuxt JS"
+                    description="SSR 프로젝트, PostgreSQL 연동 경험"
+                    level={4}
+                  />
+                </SkillGroup>
 
-              {/* 데이터베이스 */}
-              <SkillGroup>
-                <SkillGroupTitle>🗄️ Database</SkillGroupTitle>
-                <SkillContainer
-                  skill="MySQL"
-                  description="간단한 CRUD 작성 가능"
-                  level={3}
-                />
-                <SkillContainer
-                  skill="Postgres"
-                  description="실제 프로젝트 사용"
-                  level={3}
-                />
-              </SkillGroup>
+                {/* 데이터베이스 */}
+                <SkillGroup>
+                  <SkillGroupTitle>🗄️ Database</SkillGroupTitle>
+                  <SkillContainer
+                    skill="MySQL"
+                    description="간단한 CRUD 작성 가능"
+                    level={3}
+                  />
+                  <SkillContainer
+                    skill="Postgres"
+                    description="실제 프로젝트 사용"
+                    level={3}
+                  />
+                </SkillGroup>
+              </div>
+
+              {/* 오른쪽 컬럼 */}
+              <div style={{ flex: 1 }}>
+                {/* Tools */}
+                <SkillGroup>
+                  <SkillGroupTitle>🛠️ Tools</SkillGroupTitle>
+                  <SkillContainer
+                    skill="Git"
+                    description="브랜치 전략 기반 협업 경험"
+                    level={4}
+                  />
+                  <SkillContainer
+                    skill="Figma"
+                    description="와이어프레임 및 UI 협업 경험"
+                    level={4}
+                  />
+                </SkillGroup>
+
+                {/* Cloud */}
+                <SkillGroup>
+                  <SkillGroupTitle>☁️ Cloud</SkillGroupTitle>
+                  <SkillContainer
+                    skill="GCP"
+                    description="VM 인스턴스 생성 및 FPT 서버 구축, 파일 업로드/백업 경험"
+                    level={3}
+                  />
+                  <SkillContainer
+                    skill="AWS"
+                    description="CloudFront 및 EC2 활용 배포 경험"
+                    level={3}
+                  />
+                </SkillGroup>
+              </div>
             </div>
-
-            {/* 오른쪽 컬럼 */}
-            <div style={{ flex: 1 }}>
-              {/* Tools */}
-              <SkillGroup>
-                <SkillGroupTitle>🛠️ Tools</SkillGroupTitle>
-                <SkillContainer
-                  skill="Git"
-                  description="브랜치 전략 기반 협업 경험"
-                  level={4}
-                />
-                <SkillContainer
-                  skill="Figma"
-                  description="와이어프레임 및 UI 협업 경험"
-                  level={4}
-                />
-              </SkillGroup>
-
-              {/* Cloud */}
-              <SkillGroup>
-                <SkillGroupTitle>☁️ Cloud</SkillGroupTitle>
-                <SkillContainer
-                  skill="GCP"
-                  description="VM 인스턴스 생성 및 FPT 서버 구축, 파일 업로드/백업 경험"
-                  level={3}
-                />
-                <SkillContainer
-                  skill="AWS"
-                  description="CloudFront 및 EC2 활용 배포 경험"
-                  level={3}
-                />
-              </SkillGroup>
-            </div>
-          </div>
-        </Card>
+          </Card>
+        </div>
 
         {/* Project Tabs*/}
-        <Card variant="outlined" sx={{ flex: "1" }}>
-          <Tabs
-            aria-label="Project Tabs"
-            defaultValue={0}
-            style={{
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <TabList>
-              <Tab>Bigtorage</Tab>
-              <Tab>SSAFY</Tab>
-            </TabList>
+        <div
+          style={{
+            display: "flex",
+            flex: 1,
+            width: "100%",
+          }}
+        >
+          <Card variant="outlined" sx={{ width: "98%" }}>
+            <Tabs
+              aria-label="Project Tabs"
+              defaultValue={0}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                margin: "0",
+              }}
+            >
+              <TabList>
+                <Tab>Bigtorage</Tab>
+                <Tab>SSAFY</Tab>
+              </TabList>
 
-            <TabPanel value={0} style={{ flex: "1 1 auto", overflow: "auto" }}>
-              {/* Bigtorage 프로젝트 */}
-              <Container style={{ flexWrap: "wrap", gap: "16px" }}>
-                {bigtoragePJT.map((pjt, idx) => (
-                  <ProjectCard key={idx} project={pjt} onClick={handleOpen} />
-                ))}
-              </Container>
-            </TabPanel>
+              <TabPanel
+                value={0}
+                style={{ flex: "1 1 auto", overflow: "auto" }}
+              >
+                {/* Bigtorage 프로젝트 */}
+                <ContentContainer style={{ flexWrap: "wrap", gap: "16px" }}>
+                  {bigtoragePJT.map((pjt, idx) => (
+                    <ProjectCard key={idx} project={pjt} onClick={handleOpen} />
+                  ))}
+                </ContentContainer>
+              </TabPanel>
 
-            <TabPanel value={1} style={{ flex: "1 1 auto", overflow: "auto" }}>
-              {/* SSAFY 프로젝트 */}
-              <Container style={{ flexWrap: "wrap", gap: "16px" }}>
-                {ssafyPJT.map((pjt, idx) => (
-                  <ProjectCard key={idx} project={pjt} onClick={handleOpen} />
-                ))}
-              </Container>
-            </TabPanel>
-          </Tabs>
-        </Card>
+              <TabPanel
+                value={1}
+                style={{ flex: "1 1 auto", overflow: "auto" }}
+              >
+                {/* SSAFY 프로젝트 */}
+                <ContentContainer style={{ flexWrap: "wrap", gap: "16px" }}>
+                  {ssafyPJT.map((pjt, idx) => (
+                    <ProjectCard key={idx} project={pjt} onClick={handleOpen} />
+                  ))}
+                </ContentContainer>
+              </TabPanel>
+            </Tabs>
+          </Card>
+        </div>
       </MainContainer>
       {/* 프로젝트 상세 모달 */}
       <ProjectModal

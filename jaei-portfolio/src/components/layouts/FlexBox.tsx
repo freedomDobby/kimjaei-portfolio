@@ -13,6 +13,8 @@ interface ContainerProps {
 interface TextProps {
   width?: string | null;
   bold?: string | null;
+  flexDirection?: string | null;
+  justifyContent?: string | null;
 }
 
 interface SectionProps {
@@ -51,15 +53,30 @@ export const TextContainer = styled.div<TextProps>`
   // border: 1px solid blue;
   font-weight: ${({ bold }) => bold || "normal"};
   width: ${({ width }) => width || "auto"};
-  flex: display;
-  justify-content: center;
+  display: flex;
+  flex-direction: ${({ flexDirection }) => flexDirection || "row"};
+  justify-content: ${({ justifyContent }) => justifyContent || "flex-start"};
   align-items: center;
-  margin: 1%;
+  margin: 0.5%;
   white-space: nowrap;
 `;
 
 export const Container = styled.div<ContainerProps>`
-  // border: 1px solid red;
+  // border: 1px solid black;
+  display: flex;
+  overflow: hidden;
+  height: 100vh;
+  box-sizing: border-box;
+  width: ${({ width }) => width || "auto"};
+  margin: ${({ $margin }) => $margin || "0"};
+  padding: ${({ $padding }) => $padding || "0"};
+  flex-direction: ${({ flexDirection }) => flexDirection || "row"};
+  justify-content: ${({ justifyContent }) => justifyContent || "flex-start"};
+  align-items: ${({ $alignItems }) => $alignItems || "center"};
+`;
+
+export const ContentContainer = styled.div<ContainerProps>`
+  // border: 1px solid orange;
   display: flex;
   width: ${({ width }) => width || "auto"};
   height: ${({ height }) => height || "auto"};
@@ -71,13 +88,17 @@ export const Container = styled.div<ContainerProps>`
 `;
 
 export const MainContainer = styled.div<ContainerProps>`
-  // border: 1px solid black;
+  // border: 1px solid green;
+  // background-color: green;
+  box-sizing: border-box;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
+  padding: 0.5%;
+  gap: 2%;
+  height: 100%;
+  justify-content: ${({ justifyContent }) => justifyContent || "flex-start"};
+  align-items: ${({ $alignItems }) => $alignItems || "center"};
   width: ${({ width }) => width || "100%"};
-  height: ${({ height }) => height || "100%"};
   margin: ${({ $margin }) => $margin || "0"};
-  padding: ${({ $padding }) => $padding || "0"};
 `;
